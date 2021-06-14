@@ -16,7 +16,12 @@ set -x  GHCUP_PATH   "$HOME/.ghcup"
 set -x  NODE_PATH    "$HOME/.nvm/versions/node/v12.22.1"
 set -x  NVM_DIR      "$HOME/.nvm"
 
+# Set global environment
 set -gx PATH        $JAVA_HOME/bin $VSCODE_PATH $COURSIER $HOME/bin /usr/local/bin /usr/local/sbin $PATH
 set -gx PATH        $NVM_DIR $NODE_PATH/bin $GHCUP_PATH/bin $CARGO_PATH/bin $PATH
 
+# For python venv
+set -e _OLD_FISH_PROMPT_OVERRIDE
+set -e _OLD_VIRTUAL_PYTHONHOME
+set -e _OLD_VIRTUAL_PATH
 source $HOME/tools/venv/bin/activate.fish
