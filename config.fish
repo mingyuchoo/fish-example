@@ -20,7 +20,7 @@ set -x  CARGO_PATH         "$HOME/.cargo"
 
 
 # Set global environment
-set -gx PATH        $JAVA_HOME/bin $VSCODE_PATH $COURSIER $HOME/bin /usr/local/bin /usr/local/sbin $PATH
+set -gx PATH        $JAVA_HOME/bin $VSCODE_PATH $COURSIER $HOME/bin $HOME/.local/bin /usr/local/bin /usr/local/sbin $PATH
 set -gx PATH        $ANDROID_SDK_ROOT/emulator $ANDROID_SDK_ROOT/tools $ANDROID_SDK_ROOT/platform-tools $PATH
 set -gx PATH        $NVM_DIR $NODE_PATH/bin $GHCUP_PATH/bin $CABAL_PATH/bin $CARGO_PATH/bin $PATH
 
