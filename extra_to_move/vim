@@ -1,0 +1,11 @@
+#!/usr/bin/bash
+
+if [ -n "$TMUX" ]
+then
+  tmux split-window -h "nvim \"$*\""
+elif [ -n "/usr/bin/nvim" ]
+then
+  nvim $*
+else
+  vim $*
+fi
