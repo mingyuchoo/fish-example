@@ -1,3 +1,8 @@
+<p align="center">
+  <a href="https://github.com/mingyuchoo/fish-example/issues"><img alt="Issues" src="https://img.shields.io/github/issues/mingyuchoo/fish-example?color=appveyor" /></a>
+  <a href="https://github.com/mingyuchoo/fish-example/pulls"><img alt="GitHub pull requests" src="https://img.shields.io/github/issues-pr/mingyuchoo/fish-example?color=appveyor" /></a>
+</p>
+
 # fish-example
 
 ## Install fish
