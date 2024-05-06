@@ -24,20 +24,14 @@ set -x LANG en_US.UTF-8
 source /usr/local/share/autojump/autojump.fish
 ```
 
-## Install `fisher`
+## Install Plugins
 
 - <https://github.com/jorgebucaran/fisher>
+- <https://github.com/edc/bass>
 
 ```bash
 curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
 fisher install jorgebucaran/nvm.fish
-fisher install IlanCosman/tide@v5
-```
-
-## Install `bass`
-
-- <https://github.com/edc/bass>
-
-```bash
+fisher install IlanCosman/tide@v6
 fisher install edc/bass
 ```
