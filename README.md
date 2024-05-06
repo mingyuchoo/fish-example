@@ -29,7 +29,9 @@ source /usr/local/share/autojump/autojump.fish
 - <https://github.com/jorgebucaran/fisher>
 
 ```bash
-curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
+curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
+fisher install jorgebucaran/nvm.fish
+fisher install IlanCosman/tide@v5
 ```
 
 ## Install `bass`
