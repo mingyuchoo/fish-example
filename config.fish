@@ -1,25 +1,43 @@
 umask 022
 
-set -gx EDITOR      vim
-set -gx MANPATH     /usr/local/man $MANPATH
-set -gx LANG        en_US.UTF-8
+# ENV
+set -gx EDITOR 'nvim'
+set -gx LANG en_US.UTF-8
+set -gx MANPATH "/usr/local/man:$MANPATH"
+set -gx PAGER 'cat'
 
+set -x HIST_STAMPS "yyyy-mm-dd"
+set -x fish_history_size 20000
 
-set -x  NVM_DIR            "$HOME/.nvm"
-set -x  NODE_PATH          "$HOME/.nvm/versions/node/v16.9.1"
-set -x  GHCUP_PATH         "$HOME/.ghcup"
-set -x  CABAL_PATH         "$HOME/.cabal"
-set -x  CARGO_PATH         "$HOME/.cargo"
+# PATH
+fish_add_path /opt/homebrew/bin
+fish_add_path /opt/homebrew/sbin
+fish_add_path /usr/local/bin
+fish_add_path $HOME/bin
+fish_add_path $HOME/.cargo/bin
+fish_add_path $HOME/.config/emacs/bin
+fish_add_path $HOME/.ghcup/bin
+fish_add_path $HOME/.local/bin
+fish_add_path $HOME/.rd/bin
+fish_add_path $HOME/.bun/bin
 
+# ALIAS
+alias ls="ls --color=auto"
+alias la="ls -la"
+alias ll="ls -l"
+alias lz="lazydocker"
+alias ed="emacs --daemon"
+alias ec="emacsclient -c"
+alias frontend="cd /Users/mgch/github/mingyuchoo/playa-frontend"
+alias backend="cd /Users/mgch/github/mingyuchoo/playa_umbrella"
 
-# Set global environment
-set -gx PATH        $HOME/bin $HOME/.local/bin /usr/local/bin /usr/local/sbin $PATH
-set -gx PATH        $NVM_DIR $NODE_PATH/bin $GHCUP_PATH/bin $CABAL_PATH/bin $CARGO_PATH/bin $PATH
-
-
-# For python venv
-set -e _OLD_FISH_PROMPT_OVERRIDE
-set -e _OLD_VIRTUAL_PYTHONHOME
-set -e _OLD_VIRTUAL_PATH
-source $HOME/tools/venv/bin/activate.fish
+function vv
+    set tmp (mktemp -t "yazi-cwd.XXXXXX")
+    yazi $argv --cwd-file=$tmp
+    set cwd (cat -- $tmp)
+    if test -n "$cwd" -a "$cwd" != "$PWD"
+        cd -- $cwd
+    end
+    rm -f -- $tmp
+end
 
