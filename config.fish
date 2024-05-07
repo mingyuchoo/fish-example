@@ -28,8 +28,6 @@ alias ll="ls -l"
 alias lz="lazydocker"
 alias ed="emacs --daemon"
 alias ec="emacsclient -c"
-alias frontend="cd /Users/mgch/github/mingyuchoo/playa-frontend"
-alias backend="cd /Users/mgch/github/mingyuchoo/playa_umbrella"
 
 function vv
     set tmp (mktemp -t "yazi-cwd.XXXXXX")
