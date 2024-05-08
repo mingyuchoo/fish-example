@@ -14,12 +14,13 @@ fish_add_path /opt/homebrew/bin
 fish_add_path /opt/homebrew/sbin
 fish_add_path /usr/local/bin
 fish_add_path $HOME/bin
+fish_add_path $HOME/.bun/bin
 fish_add_path $HOME/.cargo/bin
 fish_add_path $HOME/.config/emacs/bin
 fish_add_path $HOME/.ghcup/bin
 fish_add_path $HOME/.local/bin
+fish_add_path $HOME/.opam/default/bin
 fish_add_path $HOME/.rd/bin
-fish_add_path $HOME/.bun/bin
 
 # ALIAS
 alias ls="ls --color=auto"
